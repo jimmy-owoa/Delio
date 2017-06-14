@@ -1,0 +1,5 @@
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioConexion\obj\Debug\DelioConexion.csprojResolveAssemblyReference.cache
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioConexion\bin\Debug\DelioConexion.pdb
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioConexion\obj\Debug\DelioConexion.pdb
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioConexion\bin\Debug\DelioConexion.exe
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioConexion\obj\Debug\DelioConexion.exe

@@ -1,0 +1,9 @@
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioNegocio\bin\Debug\DelioNegocio.dll
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioNegocio\bin\Debug\DelioNegocio.pdb
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioNegocio\obj\Debug\DelioNegocio.dll
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioNegocio\obj\Debug\DelioNegocio.pdb
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioNegocio\obj\Debug\DelioNegocio.csprojResolveAssemblyReference.cache
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioNegocio\bin\Debug\DelioDALC.dll
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioNegocio\bin\Debug\EntityFramework.dll
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioNegocio\bin\Debug\DelioDALC.pdb
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioNegocio\bin\Debug\EntityFramework.xml

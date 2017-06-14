@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Delio_INSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ciudad">
+    <Key>
+      <PropertyRef Name="idCiudad" />
+    </Key>
+    <Property Name="idCiudad" Type="Int32" Nullable="false" />
+    <Property Name="nombreCiudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Comuna" Relationship="Self.FK_Comuna_Ciudad" FromRole="Ciudad" ToRole="Comuna" />
+  </EntityType>
+  <EntityType Name="Comuna">
+    <Key>
+      <PropertyRef Name="idComuna" />
+    </Key>
+    <Property Name="idComuna" Type="Int32" Nullable="false" />
+    <Property Name="nombreComuna" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idCiudadFK" Type="Int32" />
+    <NavigationProperty Name="Ciudad" Relationship="Self.FK_Comuna_Ciudad" FromRole="Comuna" ToRole="Ciudad" />
+    <NavigationProperty Name="Tienda" Relationship="Self.FK_Tienda_Comuna" FromRole="Comuna" ToRole="Tienda" />
+  </EntityType>
+  <EntityType Name="CuentaUsuario">
+    <Key>
+      <PropertyRef Name="idCuentaUsuario" />
+    </Key>
+    <Property Name="idCuentaUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="edad" Type="Int32" />
+    <Property Name="sexo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="telefono" Type="Int32" />
+    <Property Name="nombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idTipoCuentaFK" Type="Int32" />
+    <NavigationProperty Name="TipoCuenta" Relationship="Self.FK_CuentaUsuario_TipoCuenta" FromRole="CuentaUsuario" ToRole="TipoCuenta" />
+    <NavigationProperty Name="Oferta" Relationship="Self.FK_Oferta_CuentaUsuario" FromRole="CuentaUsuario" ToRole="Oferta" />
+  </EntityType>
+  <EntityType Name="Marca">
+    <Key>
+      <PropertyRef Name="idMarca" />
+    </Key>
+    <Property Name="idMarca" Type="Int32" Nullable="false" />
+    <Property Name="nombreMarca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaContrato" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Producto_Marca" FromRole="Marca" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Oferta">
+    <Key>
+      <PropertyRef Name="idOferta" />
+    </Key>
+    <Property Name="idOferta" Type="Int32" Nullable="false" />
+    <Property Name="porcentajeDescuento" Type="Double" />
+    <Property Name="fechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="fechaTermino" Type="DateTime" Precision="3" />
+    <Property Name="loQuiero" Type="Boolean" />
+    <Property Name="idCuentaUsuarioFK" Type="Int32" />
+    <Property Name="idCuentaProductoFK" Type="Int32" />
+    <NavigationProperty Name="CuentaUsuario" Relationship="Self.FK_Oferta_CuentaUsuario" FromRole="Oferta" ToRole="CuentaUsuario" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Oferta_Producto" FromRole="Oferta" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Int32" />
+    <Property Name="ImagenUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="idMarcaFK" Type="Int32" />
+    <Property Name="idTiendaFK" Type="Int32" />
+    <NavigationProperty Name="Marca" Relationship="Self.FK_Producto_Marca" FromRole="Producto" ToRole="Marca" />
+    <NavigationProperty Name="Oferta" Relationship="Self.FK_Oferta_Producto" FromRole="Producto" ToRole="Oferta" />
+    <NavigationProperty Name="Tienda" Relationship="Self.FK_Producto_Tienda" FromRole="Producto" ToRole="Tienda" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tienda">
+    <Key>
+      <PropertyRef Name="idTienda" />
+    </Key>
+    <Property Name="idTienda" Type="Int32" Nullable="false" />
+    <Property Name="nombreTienda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="idComunaFK" Type="Int32" />
+    <NavigationProperty Name="Comuna" Relationship="Self.FK_Tienda_Comuna" FromRole="Tienda" ToRole="Comuna" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Producto_Tienda" FromRole="Tienda" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="TipoCuenta">
+    <Key>
+      <PropertyRef Name="idTipoCuenta" />
+    </Key>
+    <Property Name="idTipoCuenta" Type="Int32" Nullable="false" />
+    <Property Name="nombreTipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CuentaUsuario" Relationship="Self.FK_CuentaUsuario_TipoCuenta" FromRole="TipoCuenta" ToRole="CuentaUsuario" />
+  </EntityType>
+  <Association Name="FK_Comuna_Ciudad">
+    <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="0..1" />
+    <End Role="Comuna" Type="Self.Comuna" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudad">
+        <PropertyRef Name="idCiudad" />
+      </Principal>
+      <Dependent Role="Comuna">
+        <PropertyRef Name="idCiudadFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tienda_Comuna">
+    <End Role="Comuna" Type="Self.Comuna" Multiplicity="0..1" />
+    <End Role="Tienda" Type="Self.Tienda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comuna">
+        <PropertyRef Name="idComuna" />
+      </Principal>
+      <Dependent Role="Tienda">
+        <PropertyRef Name="idComunaFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CuentaUsuario_TipoCuenta">
+    <End Role="TipoCuenta" Type="Self.TipoCuenta" Multiplicity="0..1" />
+    <End Role="CuentaUsuario" Type="Self.CuentaUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCuenta">
+        <PropertyRef Name="idTipoCuenta" />
+      </Principal>
+      <Dependent Role="CuentaUsuario">
+        <PropertyRef Name="idTipoCuentaFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Oferta_CuentaUsuario">
+    <End Role="CuentaUsuario" Type="Self.CuentaUsuario" Multiplicity="0..1" />
+    <End Role="Oferta" Type="Self.Oferta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CuentaUsuario">
+        <PropertyRef Name="idCuentaUsuario" />
+      </Principal>
+      <Dependent Role="Oferta">
+        <PropertyRef Name="idCuentaUsuarioFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_Marca">
+    <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="idMarca" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idMarcaFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Oferta_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
+    <End Role="Oferta" Type="Self.Oferta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="idProducto" />
+      </Principal>
+      <Dependent Role="Oferta">
+        <PropertyRef Name="idCuentaProductoFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_Tienda">
+    <End Role="Tienda" Type="Self.Tienda" Multiplicity="0..1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tienda">
+        <PropertyRef Name="idTienda" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idTiendaFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Delio_INSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ciudad" EntityType="Self.Ciudad" />
+    <EntitySet Name="Comuna" EntityType="Self.Comuna" />
+    <EntitySet Name="CuentaUsuario" EntityType="Self.CuentaUsuario" />
+    <EntitySet Name="Marca" EntityType="Self.Marca" />
+    <EntitySet Name="Oferta" EntityType="Self.Oferta" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tienda" EntityType="Self.Tienda" />
+    <EntitySet Name="TipoCuenta" EntityType="Self.TipoCuenta" />
+    <AssociationSet Name="FK_Comuna_Ciudad" Association="Self.FK_Comuna_Ciudad">
+      <End Role="Ciudad" EntitySet="Ciudad" />
+      <End Role="Comuna" EntitySet="Comuna" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tienda_Comuna" Association="Self.FK_Tienda_Comuna">
+      <End Role="Comuna" EntitySet="Comuna" />
+      <End Role="Tienda" EntitySet="Tienda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CuentaUsuario_TipoCuenta" Association="Self.FK_CuentaUsuario_TipoCuenta">
+      <End Role="TipoCuenta" EntitySet="TipoCuenta" />
+      <End Role="CuentaUsuario" EntitySet="CuentaUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oferta_CuentaUsuario" Association="Self.FK_Oferta_CuentaUsuario">
+      <End Role="CuentaUsuario" EntitySet="CuentaUsuario" />
+      <End Role="Oferta" EntitySet="Oferta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Marca" Association="Self.FK_Producto_Marca">
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oferta_Producto" Association="Self.FK_Oferta_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Oferta" EntitySet="Oferta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Tienda" Association="Self.FK_Producto_Tienda">
+      <End Role="Tienda" EntitySet="Tienda" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

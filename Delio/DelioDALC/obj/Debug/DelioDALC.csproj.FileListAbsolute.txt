@@ -1,0 +1,10 @@
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioDALC\bin\Debug\DelioDALC.dll.config
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioDALC\bin\Debug\DelioDALC.dll
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioDALC\bin\Debug\DelioDALC.pdb
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioDALC\bin\Debug\EntityFramework.dll
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioDALC\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioDALC\bin\Debug\EntityFramework.xml
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioDALC\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioDALC\obj\Debug\DelioDALC.csprojResolveAssemblyReference.cache
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioDALC\obj\Debug\DelioDALC.dll
+C:\Users\Alonso\Desktop\Delio INS\Delio\DelioDALC\obj\Debug\DelioDALC.pdb

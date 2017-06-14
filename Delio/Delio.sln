@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Delio", "..\..\..\Documents\Visual Studio 2015\Projects\Delio\", "{7CB70358-49BD-44AB-8FC4-C91CF7318621}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60504"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\Documents\Visual Studio 2015\Projects\Delio\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60504\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60504"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\Documents\Visual Studio 2015\Projects\Delio\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60504\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "60504"
+		SlnRelativePath = "..\..\..\Documents\Visual Studio 2015\Projects\Delio\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelioNegocio", "DelioNegocio\DelioNegocio.csproj", "{930372F6-10D2-4928-B551-FDB6D0094AB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelioConexion", "DelioConexion\DelioConexion.csproj", "{A3601B9F-04A8-454A-BA6C-21915701F7F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelioDALC", "DelioDALC\DelioDALC.csproj", "{BD93E4F3-E531-4973-9509-F6E0A2ABE8E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CB70358-49BD-44AB-8FC4-C91CF7318621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB70358-49BD-44AB-8FC4-C91CF7318621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB70358-49BD-44AB-8FC4-C91CF7318621}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB70358-49BD-44AB-8FC4-C91CF7318621}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{930372F6-10D2-4928-B551-FDB6D0094AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{930372F6-10D2-4928-B551-FDB6D0094AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{930372F6-10D2-4928-B551-FDB6D0094AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{930372F6-10D2-4928-B551-FDB6D0094AB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3601B9F-04A8-454A-BA6C-21915701F7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3601B9F-04A8-454A-BA6C-21915701F7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3601B9F-04A8-454A-BA6C-21915701F7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3601B9F-04A8-454A-BA6C-21915701F7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD93E4F3-E531-4973-9509-F6E0A2ABE8E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD93E4F3-E531-4973-9509-F6E0A2ABE8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD93E4F3-E531-4973-9509-F6E0A2ABE8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD93E4F3-E531-4973-9509-F6E0A2ABE8E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
